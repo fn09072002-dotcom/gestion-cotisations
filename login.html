@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion — Gestion des Cotisations</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        brand: { DEFAULT:'#40206A', 700:'#2F1750', 50:'#F4EEFA' },
+        brandgreen: { DEFAULT:'#1E8449', 600:'#196F3D', 50:'#EAF7EE' },
+      },
+      fontFamily: { display:['"Poppins"','sans-serif'], body:['Inter','sans-serif'] }
+    } }
+  }
+</script>
+</head>
+<body class="font-body bg-slate-50 min-h-screen flex items-center justify-center px-6 py-10">
+  <div class="w-full max-w-sm">
+    <div class="flex items-center gap-2 justify-center mb-8">
+      <div class="w-9 h-9 rounded-lg bg-brand flex items-center justify-center font-display font-bold text-white">C</div>
+      <span class="font-display text-xl font-bold tracking-tight text-slate-900">Cotise</span>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-2xl p-7">
+      <h1 class="font-display text-xl font-bold text-center mb-1">CONNEXION</h1>
+      <p class="text-sm text-slate-500 text-center mb-6">bienvenue&nbsp;! connectez vous à votre compte</p>
+
+      <form action="#" onsubmit="return false;" class="space-y-4">
+        <div>
+          <input type="email" placeholder="email" required
+            class="w-full border border-slate-200 bg-slate-50 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy">
+        </div>
+        <div>
+          <input type="password" placeholder="mot de passe" required
+            class="w-full border border-slate-200 bg-slate-50 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy">
+        </div>
+        <div class="text-right -mt-2">
+          <a href="#" class="text-xs text-brandgreen-600 hover:underline">mots de passe oublié ?</a>
+        </div>
+        <button type="button" onclick="location.href='gerant/dashboard.html'"
+          class="w-full bg-brandgreen hover:bg-brandgreen-600 transition text-white font-semibold rounded-lg py-3 text-sm">
+          se connecter
+        </button>
+      </form>
+    </div>
+
+    <div class="mt-6 pt-5 border-t border-dashed border-slate-300">
+      <p class="text-xs text-slate-400 text-center mb-3">Aperçu prototype — accès direct par profil</p>
+      <div class="grid grid-cols-3 gap-2">
+        <a href="gerant/dashboard.html" class="text-center text-xs font-medium border border-slate-200 rounded-lg py-2.5 text-navy hover:border-navy transition">Gérant</a>
+        <a href="apprenant/dashboard.html" class="text-center text-xs font-medium border border-slate-200 rounded-lg py-2.5 text-navy hover:border-navy transition">Apprenant</a>
+        <a href="coach/dashboard.html" class="text-center text-xs font-medium border border-slate-200 rounded-lg py-2.5 text-navy hover:border-navy transition">Coach</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

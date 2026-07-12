@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion des Cotisations</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        brand: { DEFAULT:'#40206A', 700:'#2F1750', 50:'#F4EEFA' },
+        brandgreen: { DEFAULT:'#1E8449', 600:'#196F3D', 50:'#EAF7EE' },
+      },
+      fontFamily: { display:['"Poppins"','sans-serif'], body:['Inter','sans-serif'] }
+    } }
+  }
+</script>
+</head>
+<body class="font-body bg-brand min-h-screen flex items-center justify-center px-6">
+  <div class="text-center max-w-sm">
+    <div class="w-24 h-24 rounded-full border-2 border-white/80 mx-auto mb-8 flex items-center justify-center text-4xl">
+      👤💰
+    </div>
+    <h1 class="font-display text-xl font-bold text-white tracking-wide mb-3">GESTION DES COTISATIONS</h1>
+    <p class="text-sm text-purple-100 leading-relaxed mb-10">SUIVI SIMPLE, COLLECTE<br>TRANSPARENTE</p>
+    <a href="login.html" class="block w-full bg-brandgreen hover:bg-brandgreen-600 transition text-white font-semibold rounded-lg py-3.5 text-sm">Commencer</a>
+  </div>
+</body>
+</html>

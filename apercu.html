@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aperçu des écrans — Gestion des Cotisations</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { brand: { DEFAULT:'#40206A' }, navy: { DEFAULT:'#241468' } },
+      fontFamily: { display:['"Poppins"','sans-serif'], body:['Inter','sans-serif'] }
+    } }
+  }
+</script>
+</head>
+<body class="font-body bg-slate-50 min-h-screen">
+<div class="max-w-4xl mx-auto px-6 py-12">
+  <h1 class="font-display text-3xl font-bold mb-2">Gestion des Cotisations</h1>
+  <p class="text-slate-500 mb-10">Aperçu de tous les écrans (navigation par en-tête + onglets, comme sur le web).</p>
+
+  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Authentification</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
+    <a href="index.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Écran d'accueil</a>
+    <a href="login.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Connexion</a>
+  </div>
+
+  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Gérant</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
+    <a href="gerant/dashboard.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Dashboard</a>
+    <a href="gerant/paiement-create.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Nouveau paiement</a>
+    <a href="gerant/apprenants.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Liste des apprenants</a>
+    <a href="gerant/apprenant-detail.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Fiche apprenant</a>
+    <a href="gerant/campagnes.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Campagnes</a>
+    <a href="gerant/campagne-create.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Nouvelle campagne</a>
+    <a href="gerant/tableau-croise.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Tableau des cotisations</a>
+    <a href="gerant/historique.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Historique</a>
+  </div>
+
+  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Apprenant</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
+    <a href="apprenant/dashboard.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Dashboard</a>
+    <a href="apprenant/mes-semaines.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Mes semaines</a>
+    <a href="apprenant/campagnes.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Campagnes</a>
+    <a href="apprenant/historique.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Historique</a>
+  </div>
+
+  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Coach Superviseur</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    <a href="coach/dashboard.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Dashboard</a>
+    <a href="coach/audit.html" class="bg-white border border-slate-200 hover:border-navy rounded-xl px-4 py-3 text-sm font-medium transition">Tableau d'audit</a>
+  </div>
+</div>
+</body>
+</html>

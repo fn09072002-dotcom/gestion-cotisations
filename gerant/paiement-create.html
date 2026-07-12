@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nouveau paiement — Gestion des Cotisations</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      screens: { 'xs': '420px' },
+      colors: {
+        brand: { DEFAULT:'#40206A', 700:'#2F1750', 50:'#F4EEFA' },
+        brandgreen: { DEFAULT:'#1E8449', 600:'#196F3D', 50:'#EAF7EE' },
+        navy: { DEFAULT:'#241468' },
+        danger: { DEFAULT:'#E5473C', soft:'#F1A19A' },
+        badge: { bg:'#C8ECD2', text:'#1A7A3D', pendingbg:'#FFE1B3', pendingtext:'#96591A' }
+      },
+      fontFamily: { display:['"Poppins"','sans-serif'], body:['Inter','sans-serif'] }
+    } }
+  }
+</script>
+
+</head>
+<body class="font-body text-slate-900 bg-slate-50 min-h-screen overflow-x-hidden">
+
+<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2">
+    <div class="flex items-center gap-2 min-w-0">
+      <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-brand flex items-center justify-center font-display font-bold text-white shrink-0">C</div>
+      <span class="font-display text-lg sm:text-xl font-bold tracking-tight text-slate-900 truncate">Cotise</span>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <span class="text-xs sm:text-sm text-slate-500 hidden md:inline">fatou ndiaye &middot; Gérant</span>
+      <a href="../login.html" class="text-xs sm:text-sm text-danger hover:text-danger-soft transition whitespace-nowrap">Déconnexion</a>
+    </div>
+  </div>
+</header>
+<nav class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center gap-4 sm:gap-6 border-b border-slate-200 overflow-x-auto bg-white [-webkit-overflow-scrolling:touch]">
+  <a href="dashboard.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Dashboard</a>
+  <a href="paiement-create.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-brand text-brand">Nouveau paiement</a>
+  <a href="apprenants.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Apprenants</a>
+  <a href="campagnes.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Campagnes</a>
+  <a href="tableau-croise.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Tableau croisé</a>
+  <a href="historique.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Historique</a>
+</nav>
+
+<main class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+<h1 class="font-display text-2xl font-bold mb-1">Nouveau paiement</h1>
+<p class="text-slate-500 mb-6">Saisie déclarative après réception des fonds.</p>
+
+<form action="#" onsubmit="return false;" class="bg-white border border-slate-200 rounded-2xl p-6 space-y-4 max-w-xl">
+  <div>
+    <label class="text-sm text-slate-500 mb-1 block">Apprenant</label>
+    <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm">
+      <option>Fatou Ndiaye</option>
+      <option>awa sall</option>
+      <option>mariama ndour</option>
+      <option>mouhamed ba</option>
+      <option>mame fatou</option>
+    </select>
+  </div>
+  <div>
+    <label class="text-sm text-slate-500 mb-1 block">montant (FCFA)</label>
+    <input type="number" value="1000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm font-mono">
+  </div>
+  <div>
+    <label class="text-sm text-slate-500 mb-2 block">type de paiement</label>
+    <div class="space-y-3">
+      <label class="flex items-center gap-3 text-sm"><input type="radio" name="type" checked class="accent-brandgreen w-4 h-4"> Hebdomadaire</label>
+      <label class="flex items-center gap-3 text-sm"><input type="radio" name="type" class="accent-brandgreen w-4 h-4"> Anniversaire</label>
+      <label class="flex items-center gap-3 text-sm"><input type="radio" name="type" class="accent-brandgreen w-4 h-4"> Décès</label>
+      <label class="flex items-center gap-3 text-sm"><input type="radio" name="type" class="accent-brandgreen w-4 h-4"> Autres campagnes</label>
+    </div>
+  </div>
+  <button type="submit" class="w-full bg-brandgreen hover:bg-brandgreen-600 transition text-white font-bold rounded-lg py-3 text-sm">Enregistrer</button>
+</form>
+</main>
+
+</body>
+</html>

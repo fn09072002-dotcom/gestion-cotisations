@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nouvelle campagne — Gestion des Cotisations</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      screens: { 'xs': '420px' },
+      colors: {
+        brand: { DEFAULT:'#40206A', 700:'#2F1750', 50:'#F4EEFA' },
+        brandgreen: { DEFAULT:'#1E8449', 600:'#196F3D', 50:'#EAF7EE' },
+        navy: { DEFAULT:'#241468' },
+        danger: { DEFAULT:'#E5473C', soft:'#F1A19A' },
+        badge: { bg:'#C8ECD2', text:'#1A7A3D', pendingbg:'#FFE1B3', pendingtext:'#96591A' }
+      },
+      fontFamily: { display:['"Poppins"','sans-serif'], body:['Inter','sans-serif'] }
+    } }
+  }
+</script>
+
+</head>
+<body class="font-body text-slate-900 bg-slate-50 min-h-screen overflow-x-hidden">
+
+<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2">
+    <div class="flex items-center gap-2 min-w-0">
+      <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-brand flex items-center justify-center font-display font-bold text-white shrink-0">C</div>
+      <span class="font-display text-lg sm:text-xl font-bold tracking-tight text-slate-900 truncate">Cotise</span>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <span class="text-xs sm:text-sm text-slate-500 hidden md:inline">fatou ndiaye &middot; Gérant</span>
+      <a href="../login.html" class="text-xs sm:text-sm text-danger hover:text-danger-soft transition whitespace-nowrap">Déconnexion</a>
+    </div>
+  </div>
+</header>
+<nav class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center gap-4 sm:gap-6 border-b border-slate-200 overflow-x-auto bg-white [-webkit-overflow-scrolling:touch]">
+  <a href="dashboard.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Dashboard</a>
+  <a href="paiement-create.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Nouveau paiement</a>
+  <a href="apprenants.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Apprenants</a>
+  <a href="campagnes.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-brand text-brand">Campagnes</a>
+  <a href="tableau-croise.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Tableau croisé</a>
+  <a href="historique.html" class="py-3 text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 border-b-2 border-transparent text-slate-500 hover:text-slate-700">Historique</a>
+</nav>
+
+<main class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+<h1 class="font-display text-2xl font-bold mb-1">Nouvelle campagne</h1>
+<p class="text-slate-500 mb-6">Cotisation ponctuelle selon le type d'événement.</p>
+
+<form action="#" onsubmit="return false;" class="bg-white border border-slate-200 rounded-2xl p-6 space-y-4 max-w-xl">
+  <div>
+    <label class="text-sm text-slate-500 mb-1 block">Type d'événement</label>
+    <select id="type-evenement" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm"
+      onchange="
+        document.getElementById('montant-libre-note').classList.toggle('hidden', this.value!=='deces');
+        document.getElementById('cloture-note').textContent = this.value==='deces' ? 'Clôture automatique 7 jours après création.' : this.value==='anniversaire' ? 'Collecte lors de la dernière semaine du mois.' : 'Définissez librement la date de clôture.';
+      ">
+      <option value="anniversaire">Anniversaire</option>
+      <option value="deces">Cas social / Décès</option>
+      <option value="autre">Autre (matériel, sorties...)</option>
+    </select>
+  </div>
+  <div>
+    <label class="text-sm text-slate-500 mb-1 block">Titre de la campagne</label>
+    <input type="text" placeholder="ex. Décès de la maman de Rama" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm">
+  </div>
+  <div>
+    <label class="text-sm text-slate-500 mb-1 block">Montant (FCFA)</label>
+    <input type="number" placeholder="ex. 500" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm font-mono">
+    <p id="montant-libre-note" class="hidden text-xs text-slate-400 mt-2">Montant libre pour les cas sociaux : ce champ est ignoré, chaque apprenant donne selon ses moyens.</p>
+  </div>
+  <div>
+    <label class="text-sm text-slate-500 mb-1 block">Date de clôture</label>
+    <input type="text" placeholder="jj/mm/aaaa" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm">
+    <p id="cloture-note" class="text-xs text-slate-400 mt-2">Collecte lors de la dernière semaine du mois.</p>
+  </div>
+  <button type="submit" class="w-full bg-brandgreen hover:bg-brandgreen-600 transition text-white font-bold rounded-lg py-3 text-sm">Créer la campagne</button>
+</form>
+</main>
+
+</body>
+</html>
