@@ -1,4 +1,3 @@
-
 <?php
 /**
  * helpers.php — petites fonctions communes utilisées par tous les

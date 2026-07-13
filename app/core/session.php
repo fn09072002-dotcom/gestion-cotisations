@@ -14,12 +14,10 @@ function session_manager_start(): void
             'path'     => '/',
             'httponly' => true,
             'samesite' => 'Lax',
-            // 'secure' => true, // à activer derrière HTTPS en production
         ]);
         session_start();
     }
 
-    // Régénère l'identifiant de session périodiquement (limite la fixation de session).
     if (!isset($_SESSION['_last_regen'])) {
         $_SESSION['_last_regen'] = time();
     } elseif (time() - $_SESSION['_last_regen'] > 900) {
@@ -83,10 +81,6 @@ function auth_check(): bool
     return sess_has('user');
 }
 
-/**
- * Vérifie que l'utilisateur est connecté et possède le bon rôle.
- * Redirige vers /login sinon, et arrête l'exécution.
- */
 function require_role(string $role): array
 {
     $user = auth_user();
@@ -102,6 +96,9 @@ function require_role(string $role): array
     return $user;
 }
 
+// -----------------------------------------------------------------
+// Protection CSRF
+// -----------------------------------------------------------------
 
 function csrf_token(): string
 {

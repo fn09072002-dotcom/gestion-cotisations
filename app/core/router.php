@@ -1,4 +1,3 @@
-rtie
 <?php
 /**
  * router.php — routeur simple et procédural.

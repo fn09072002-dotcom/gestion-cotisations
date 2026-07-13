@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-brand: #401B68;
+  --color-brand-dark: #2C1249;
+  --color-success: #0E8231;
+  --color-success-bg: #E3F1E7;
+  --color-danger: #C0392B;
+  --color-danger-bg: #F3D3CD;
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-ink: #1F2421;
+  --color-ink-soft: #6B6B6B;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+/* Jeton hebdomadaire : évoque le tampon d'un carnet de cotisation papier */
+.jeton {
+  position: relative;
+  border-radius: 10px;
+}
+
+.jeton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background-image: repeating-linear-gradient(90deg, transparent 0 4px, rgba(31,36,33,0.08) 4px 5px);
+  background-size: 100% 1px;
+  background-position: top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
